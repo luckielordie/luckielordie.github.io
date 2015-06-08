@@ -1,7 +1,7 @@
 ---
-title: A Test Post
-published: true
-layout: default
+title : A Test Post
+published : true
+layout : default
 ---
 
 {{page.title}}
