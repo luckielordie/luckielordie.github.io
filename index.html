@@ -1,0 +1,10 @@
+---
+layout : default
+---
+<ul>
+  {% for post in site.posts limit 6 %}
+  <li><span>{{ post.date | date: "%d-%B-%Y" }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | truncatewords: 10 | capitalize }}</a></li>
+      {{ post.content | truncatewords:75}}<br>
+          <a href="{{ post.url }}">Read more...</a><br><br>
+  {% endfor %}
+</ul>

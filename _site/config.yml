@@ -45,7 +45,6 @@ baseurl: "" # does not include hostname
 permalink:     date
 paginate_path: /page:num
 timezone:      null
-
 quiet:    false
 defaults: []
 
@@ -57,7 +56,6 @@ redcarpet:
   extensions: []
 
 kramdown:
-  input: GFM
   auto_ids:       true
   footnote_nr:    1
   entity_output:  as_char
