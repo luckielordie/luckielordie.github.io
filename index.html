@@ -1,10 +1,19 @@
 ---
 layout : default
 ---
+<div class="span4">
+    {% include sidebar.html %}
+</div>
+
 <ul>
   {% for post in site.posts limit 6 %}
-  <li><span>{{ post.date | date: "%d-%B-%Y" }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | truncatewords: 10 | capitalize }}</a></li>
-      {{ post.content | truncatewords:75}}<br>
-          <a href="{{ post.url }}">Read more...</a><br><br>
+  <div class="span8">
+    <li>
+      <span>{{ post.date | date: "%d-%B-%Y" }}</span> &raquo;
+      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | truncatewords: 10 | capitalize }}</a>
+    </li>
+        {{ post.content | truncatewords:75}}<br>
+        <button type="button" class="btn btn-primary" href="{{ post.url }}">Read more...</button><br><br>
+  </div>
   {% endfor %}
 </ul>
