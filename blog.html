@@ -1,0 +1,14 @@
+---
+layout : default
+---
+<ul>
+  {% for post in site.posts limit: 10  %}
+  <div class="span8">
+    <div class="well">
+        {{ post.content | truncatewords:75}} <br><br>
+        <b>{{ post.date | date: "%-d %B %Y" }}</b><br>
+        <a href="{{ post.url }}" role="button" type="button" class="btn btn-primary">Read more...</a><br><br>
+    </div>
+  </div>
+  {% endfor %}
+</ul>

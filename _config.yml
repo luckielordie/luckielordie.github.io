@@ -43,6 +43,7 @@ baseurl: "" # does not include hostname
 
 # Outputting
 permalink:     date
+paginate : 10
 paginate_path: /page:num
 timezone:      null
 quiet:    false
