@@ -1,0 +1,17 @@
+{
+  "posts" :
+  [
+      {
+        "post_images_path" : "/_portfolio/assets/missile_mania/",
+        "post_header_image_path" : "title.png",
+        "post_title" : "Missile Mania",
+        "post_description" : "A HTML 5 game written during my time at Mobile Pie",
+        "post_date" : "2014-12-30",
+        "post_body" : ["Missile Mania is a 2D Action game where the player must launch their missile and fly as far as possible and collect coins. The coins can then be used to upgrade your missile to fly faster and farther. The game features achievements and persistence in between playthroughs." ,"Missile Mania was a project I was able to undertake when working at Mobile Pie on my placement year as part of my degree. It was written in Javascript and used the open source game engine 'Phaser'
+          to help with rendering across multiple mobile platforms and to help with input from touchscreen devices. Phasers physics engine was not fully featured at the time of writing so 'ChipmunkJS' was used in order to process the rockets physics components. You can play Missile Mania at the link below."],
+        "post_images_files" : ["title.png", "loadout.png", "gameplay.png", "summary.png"],
+        "post_link_icon" : "title.png",
+        "post_link" : "http://www.mobilepie.com/games/missile-mania/"
+      }
+  ]
+}
