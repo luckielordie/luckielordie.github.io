@@ -17,8 +17,6 @@ layout : default
         var project = {{project | jsonify}};
         $.cookie.json = true;
         $.cookie('projectToShow', project, {expires: 2});
-        var loadedProject = $.cookie('projectToShow');
-        console.log(loadedProject['post_title']);
       }
   });
   </script>

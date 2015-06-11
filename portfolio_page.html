@@ -1,12 +1,80 @@
 ---
 layout : default
 ---
-<script type="text/javascript">
-$(function()
-{
 
-});
+<script type="text/javascript">
+function FillCarousel(imageList, filepath)
+{
+  for(var i = 0; i < imageList.length; i++)
+  {
+    //create indicator
+    var indicator;
+    var slide;
+    if(i == 0)
+    {
+      indicator = '<li data-target="#carousel" data-slide-to="' + i + ' class="active""></li>';
+      slide = '<div class="item active"><img src="' + filepath + imageList[i] + '"></div>';
+    }
+    else {
+      indicator = '<li data-target="#carousel" data-slide-to="' + i + '"></li>';
+      slide = '<div class="item"><img src="' + filepath + imageList[i] + '"></div>';
+    }
+    $('#indicatorsElement').append(indicator);
+    //create Image in carousel
+
+
+    $('#carouselInner').append(slide);
+  }
+}
+
+function FillPage()
+{
+  jQuery(document).ready(function()
+  {
+    //load cookie
+    $.cookie.json = true;
+    var project = $.cookie('projectToShow');
+    FillCarousel(project['post_images_files'], project['post_images_path']);
+
+    $('#projectTitle').append(project['post_title']);
+    $('#projectDate').append(project['post_date'] + " - " + project['post_description']);
+    for(var i = 0; i < project['post_body'].length; i++)
+    {
+      var paragraph = '<p>' + project['post_body'][i] +'</p>';
+      $('#textBody').append(paragraph);
+    }
+
+    $('#icon').prop('src', project['post_images_path'] + project['post_link_icon']);
+    $('#projectLink').prop('href', project['post_link']);
+
+  });
+}
+
+FillPage();
 </script>
-<h1 id="projectTitle"></h1>
-<div id="textBody">
+<div class="carousel slide" data-ride="carousel" id="carousel">
+  <ol class="carousel-indicators" id="indicatorsElement">
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    <div class="carousel-inner" role="listbox" id="carouselInner"></div>
+    <a class="carousel-control left" href="#carousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="carousel-control right" href="#carousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
+</div>
+<div class="well">
+  <h1 id="projectTitle"></h1>
+  <h5 id="projectDate"></h5>
+  <div id="textBody">
+  </div>
+</div>
+<div style="position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0%);">
+  <img id="icon" class="img-circle" src="" alt="Generic placeholder image" width="240" height="240">
+  <p>Click the button to be taken to the project!</p>
+  <p><a id="projectLink" class="btn btn-default" href="#" role="button">View Project &raquo;</a></p>
 </div>
