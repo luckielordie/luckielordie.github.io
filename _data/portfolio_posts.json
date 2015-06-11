@@ -2,8 +2,8 @@
   "posts" :
   [
       {
-        "post_images_path" : "/_portfolio/assets/missile_mania/",
-        "post_header_image_path" : "title.png",
+        "post_images_path" : "/assets/missile_mania",
+        "post_header_image_path" : "/assets/missile_mania/title.png",
         "post_title" : "Missile Mania",
         "post_description" : "A HTML 5 game written during my time at Mobile Pie",
         "post_date" : "2014-12-30",
