@@ -9,10 +9,14 @@
   <link href="/css/bootstrap.css" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
   <style>
+    html, body { height: 100%; }
+
     body
     {
         padding-top: 60px;
         background: url(/assets/cream_dust.png) repeat 0 0;
+        min-height: 100%;
+        padding-bottom: 60px;
     }
   </style>
   <style>
@@ -22,7 +26,7 @@
     font-weight: 700;
     text-shadow: 1px 1px 1px #ccc;
   }
-  p
+  p, li, a
   {
     font-family: 'Dosis', sans-serif;
     font-weight: 400
@@ -73,28 +77,24 @@ ript>
 
 <ul style="padding-left:0px;">
   
-  <div class="span12">
     <div class="well">
         <h1 id="another-test-post">Another Test Post</h1> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse euismod turpis at enim fringilla, nec varius nulla aliquet. Integer non viverra libero. Pellentesque vitae dapibus nibh. Donec cursus pharetra ipsum, sit amet ornare libero commodo id. In malesuada luctus erat, a dictum lorem. Suspendisse luctus imperdiet commodo. Mauris tincidunt nisl et purus scelerisque, semper facilisis ipsum accumsan. Mauris suscipit, ipsum non dictum venenatis, neque tortor egestas sem, a consequat turpis purus... <br><br>
         <b>8 June 2015</b><br>
         <a href="/2015/06/08/Another_Test_Post.html" role="button" type="button" class="btn btn-primary">Read more...</a><br><br>
     </div>
-  </div>
   
-  <div class="span12">
     <div class="well">
         <h1 id="a-test-post">A Test Post</h1> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse euismod turpis at enim fringilla, nec varius nulla aliquet. Integer non viverra libero. Pellentesque vitae dapibus nibh. Donec cursus pharetra ipsum, sit amet ornare libero commodo id. In malesuada luctus erat, a dictum lorem. Suspendisse luctus imperdiet commodo. Mauris tincidunt nisl et purus scelerisque, semper facilisis ipsum accumsan. Mauris suscipit, ipsum non dictum venenatis, neque tortor egestas sem, a consequat turpis purus... <br><br>
         <b>8 June 2015</b><br>
         <a href="/2015/06/08/A_Test_Post.html" role="button" type="button" class="btn btn-primary">Read more...</a><br><br>
     </div>
-  </div>
   
 </ul>
 
       </div>
-      <nav class="navbar navbar-default navbar-fixed-bottom">
+      <!--<footer><nav class="navbar navbar-default">
               <p>2014 Mathew Lord. &middot; <a href="https://uk.linkedin.com/in/mathewlord">LinkedIn</a></p>
-      </nav>
+      </nav></footer>-->
       <script src="js/bootstrap.min.js"></script>
     </body>
   </head>

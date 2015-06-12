@@ -2,38 +2,11 @@
 layout : default
 ---
 <script type="text/javascript">
-function FillCarousel(imageList, filepath)
-{
-  for(var i = 0; i < imageList.length; i++)
-  {
-    //create indicator
-    var indicator;
-    var slide;
-    if(i == 0)
-    {
-      indicator = '<li data-target="#carousel" data-slide-to="' + i + ' class="active""></li>';
-      slide = '<div class="item active"><img src="' + filepath + imageList[i] + '"></div>';
-    }
-    else {
-      indicator = '<li data-target="#carousel" data-slide-to="' + i + '"></li>';
-      slide = '<div class="item"><img src="' + filepath + imageList[i] + '"></div>';
-    }
-    $('#indicatorsElement').append(indicator);
-    //create Image in carousel
-    $('#carouselInner').append(slide);
-  }
-}
-
 function Load()
 {
+  $('#container').css('min-height', '100%');
   $('#container').css('width', '100%');
   $('#container').css('height', '100%');
-
-  var pics = [];
-  {% for project in site.data.portfolio_posts.posts %}
-  pics.push("{{project.post_header_image_path}}");
-  {% endfor %}
-  FillCarousel(pics, "");
 };
 
 Load();
@@ -45,22 +18,10 @@ Load();
             <p class="lead">I am Mathew Lord and I'm graduating from the BSc(Hons)Computer Games Programming course at Staffordshire University in June. I am expecting to graduate a 2-1 or a first.
                I have experience working in as a developer at a mobile games company called Mobile Pie and spent a year working with them as part of my degree.</p>
             <p class="lead">This site is a showcase of my work and a platform on which I can write blog posts about new technologies I am exploring or games I'm playing.</p>
+            <p class="lead">If you would like to contact me please email me at mattlord@outlook.com or you can find my LinkedIn <a href="https://uk.linkedin.com/in/mathewlord">here.</a></p>
           </div>
           <div class="col-md-3 col-md-pull-7">
             <img class="featurette-image img-responsive center-block img-circle" src="/assets/mat.jpg" style="max-width: 75%">
           </div>
-  </div>
-  <div class="carousel slide" data-ride="carousel" id="carousel">
-    <ol class="carousel-indicators" id="indicatorsElement">
-    </ol>
-    <div class="carousel-inner" role="listbox">
-      <div class="carousel-inner" role="listbox" id="carouselInner"></div>
-      <a class="carousel-control left" href="#carousel" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left"></span>
-      </a>
-      <a class="carousel-control right" href="#carousel" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right"></span>
-      </a>
-    </div>
   </div>
 </div>
