@@ -3,25 +3,31 @@ layout : default
 ---
 <ul style="padding-left:0px;">
 {% for project in site.data.portfolio_posts.posts %}
-<div class="span12 thumbnail" id="{{project.post_title}}">
-  <a href="/portfolio_page.html">
-  <img src={{project.post_header_image_path}} class="img-responsive">
-  <div class="caption post-content">
-  <h2>{{project.post_title}}</h2>
-  </div>
-  <script type="text/javascript">
-  $(function(){
-    document.getElementById('{{project.post_title}}').onclick =
-      function()
-      {
-        var project = {{project | jsonify}};
-        $.cookie.json = true;
-        $.cookie('projectToShow', project, {expires: 2});
-      }
-  });
-  </script>
-  </a>
-</div>
-
+<br>
+<div class="span12 well" id="{{project.post_title}}">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">{{project.post_title}}</h2>
+          <p class="lead">{{project.post_body[0] | truncatewords:75}}</p><br>
+          <a href="/portfolio_page.html" role="button" type="button" class="btn btn-primary">Read more...</a><br><br>
+        </div>
+        <div class="col-md-5" style="display: table-cell;
+    vertical-align: middle;
+    float: none;">
+          <img class="featurette-image  img-responsive center-block" src="{{project.post_header_image_path}}" >
+        </div>
+        <script type="text/javascript">
+        $(function(){
+          document.getElementById('{{project.post_title}}').onclick =
+            function()
+            {
+              var project = {{project | jsonify}};
+              $.cookie.json = true;
+              $.cookie('projectToShow', project, {expires: 2});
+            }
+        });
+        </script>
+      </div>
+    </div>
 {% endfor %}
 </ul>

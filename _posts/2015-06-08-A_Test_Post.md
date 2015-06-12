@@ -1,7 +1,7 @@
 ---
 title : A Test Post
 published : true
-layout : default
+layout : default_blog
 ---
 
 {{page.title}}
