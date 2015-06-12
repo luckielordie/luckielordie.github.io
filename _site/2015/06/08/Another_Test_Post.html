@@ -9,10 +9,14 @@
   <link href="/css/bootstrap.css" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
   <style>
+    html, body { height: 100%; }
+
     body
     {
         padding-top: 60px;
         background: url(/assets/cream_dust.png) repeat 0 0;
+        min-height: 100%;
+        padding-bottom: 60px;
     }
   </style>
   <style>
@@ -22,7 +26,7 @@
     font-weight: 700;
     text-shadow: 1px 1px 1px #ccc;
   }
-  p
+  p, li, a
   {
     font-family: 'Dosis', sans-serif;
     font-weight: 400
@@ -71,6 +75,8 @@ ript>
       });
       </script>
 
+<div class="well">
+
 <h1 id="another-test-post">Another Test Post</h1>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse euismod turpis at enim fringilla, nec varius nulla aliquet. Integer non viverra libero. Pellentesque vitae dapibus nibh. Donec cursus pharetra ipsum, sit amet ornare libero commodo id. In malesuada luctus erat, a dictum lorem. Suspendisse luctus imperdiet commodo. Mauris tincidunt nisl et purus scelerisque, semper facilisis ipsum accumsan. Mauris suscipit, ipsum non dictum venenatis, neque tortor egestas sem, a consequat turpis purus non lorem. Donec convallis quam id urna finibus imperdiet. Proin laoreet pellentesque sapien, eget tempor augue tristique at. Nulla quis suscipit erat, eu convallis enim. Donec id metus a mauris sagittis blandit eu eu lacus. Nunc et elementum mauris.</p>
@@ -83,10 +89,12 @@ ript>
 
 <p>Aliquam vehicula, ipsum ac consectetur rutrum, justo diam imperdiet nunc, quis tempus nisl nisl id erat. Mauris metus arcu, luctus in metus id, condimentum dictum nunc. Ut vulputate id velit vitae luctus. Curabitur tincidunt nec augue ac pretium. Sed mollis tortor sed laoreet dictum. Maecenas pulvinar neque ut nulla efficitur condimentum. Integer dictum, libero nec congue volutpat, dolor neque ornare purus, sed imperdiet mi mauris viverra purus. Praesent tincidunt, justo quis tincidunt dignissim, nibh libero pharetra massa, vel laoreet ligula massa et massa. In sit amet condimentum eros, ac auctor turpis. Nulla convallis lacus nisl, eu volutpat dui pretium consectetur.</p>
 
+</div>
+
       </div>
-      <nav class="navbar navbar-default navbar-fixed-bottom">
+      <!--<footer><nav class="navbar navbar-default">
               <p>2014 Mathew Lord. &middot; <a href="https://uk.linkedin.com/in/mathewlord">LinkedIn</a></p>
-      </nav>
+      </nav></footer>-->
       <script src="js/bootstrap.min.js"></script>
     </body>
   </head>

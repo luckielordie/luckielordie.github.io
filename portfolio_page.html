@@ -34,7 +34,6 @@ function FillPage()
     //load cookie
     $.cookie.json = true;
     var project = $.cookie('projectToShow');
-
     FillCarousel(project['post_images_files'], project['post_images_path']);
 
     $('#projectTitle').append(project['post_title']);
@@ -70,12 +69,7 @@ FillPage();
   <h1 id="projectTitle"></h1>
   <h5 id="projectDate"></h5>
   <div id="textBody">
-  </div>
-</div>
-<div style="position: fixed;
-  left: 50%;
-  transform: translate(-50%, 0%);">
-  <img id="icon" class="img-circle" src="" alt="Generic placeholder image" width="240" height="240">
-  <p>Click the button to be taken to the project!</p>
+  </div><br>
   <p><a id="projectLink" class="btn btn-default" href="#" role="button">View Project &raquo;</a></p>
+  </div>
 </div>
