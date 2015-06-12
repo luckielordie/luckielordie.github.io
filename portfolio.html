@@ -1,13 +1,11 @@
 ---
 layout : default
 ---
-<ul style="padding-left:0px;">
 {% for project in site.data.portfolio_posts.posts %}
-<br>
-<div class="span12 well" id="{{project.post_title}}">
+<div class="well" id="{{project.post_title}}" style="padding-top:0px;">
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">{{project.post_title}}</h2>
+          <h1 class="featurette-heading">{{project.post_title}}</h1>
           <p class="lead">{{project.post_body[0] | truncatewords:75}}</p><br>
           <a href="/portfolio_page.html" role="button" type="button" class="btn btn-primary">View Project...</a><br><br>
         </div>
@@ -29,5 +27,5 @@ layout : default
         </script>
       </div>
     </div>
+    <br>
 {% endfor %}
-</ul>

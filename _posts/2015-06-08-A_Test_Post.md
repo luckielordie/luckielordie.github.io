@@ -3,7 +3,6 @@ title : A Test Post
 published : true
 layout : default_blog
 ---
-
 {{page.title}}
 ==============
 
