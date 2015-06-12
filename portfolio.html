@@ -6,13 +6,14 @@ layout : default
       <div class="row featurette">
         <div class="col-md-7">
           <h1 class="featurette-heading">{{project.post_title}}</h1>
-          <p class="lead">{{project.post_body[0] | truncatewords:75}}</p><br>
+          <p class="lead">{{project.post_body[0] | truncatewords:75}}</p>
+          <b>{{ project.post_date | date: "%-d %B %Y" }}</b><br>
           <a href="/portfolio_page.html" role="button" type="button" class="btn btn-primary">View Project</a><br><br>
         </div>
         <div class="col-md-5" style="display: table-cell;
     vertical-align: middle;
     float: none;">
-          <img class="featurette-image  img-responsive center-block" src="{{project.post_header_image_path}}" style="margin-top: 25px; margin-bottom: auto;">
+          <img class="featurette-image img-rounded  img-responsive center-block" src="{{project.post_header_image_path}}" style="margin-top: 25px; margin-bottom: auto;">
         </div>
         <script type="text/javascript">
         $(function(){
