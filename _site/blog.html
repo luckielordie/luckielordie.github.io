@@ -20,13 +20,13 @@
     }
   </style>
   <style>
-  h1
+  h1, h2, h3, h4
   {
     font-family: 'Dosis', sans-serif;
-    font-weight: 700;
+    font-weight: 400;
     text-shadow: 1px 1px 1px #ccc;
   }
-  p, li, a
+  p, li, a, b
   {
     font-family: 'Dosis', sans-serif;
     font-weight: 400
@@ -36,6 +36,11 @@
   {
     background-color: rgba(245, 245, 245, 0.7);
   }
+
+  .btn:focus,.btn:active:focus,.btn.active:focus,
+.btn.focus,.btn:active.focus,.btn.active.focus {
+    outline: none;
+}
   </style>
 
   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
@@ -53,7 +58,9 @@ ript>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand">Mathew Lord Portfolio</a>
+            <a class="navbar-brand" rel="home" href="/index.html" title="">
+              <img style="max-width:130px; margin-top: -27px; margin-left: -40px; margin-right:-40px;" src="/assets/timlogo.png">
+           </a>
           </div>
           <div class="collapse navbar-collapse navHeaderCollapse">
             <ul class="nav navbar-nav">
