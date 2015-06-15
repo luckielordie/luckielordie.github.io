@@ -6,12 +6,41 @@
         "post_header_image_path" : "/assets/missile_mania/title.png",
         "post_title" : "Missile Mania",
         "post_description" : "A HTML 5 game written during my time at Mobile Pie.",
-        "post_date" : "2014-12-30",
+        "post_date" : "2014-02-30",
         "post_body" : ["Missile Mania is a 2D Action game where the player must launch their missile and fly as far as possible and collect coins. The coins can then be used to upgrade your missile to fly faster and farther. The game features achievements and persistence in between playthroughs." ,"Missile Mania was a project I was able to undertake when working at Mobile Pie on my placement year as part of my degree. It was written in Javascript and used the open source game engine 'Phaser'
           to help with rendering across multiple mobile platforms and to help with input from touchscreen devices. Phaser's physics engine was not fully featured at the time of writing so 'ChipmunkJS' was used in order to process the rockets physics components. You can play Missile Mania at the link below."],
         "post_images_files" : ["title.png", "loadout.png", "gameplay.png", "summary.png"],
         "post_link_icon" : "title.png",
         "post_link" : "http://www.mobilepie.com/games/missile-mania/"
+      },
+
+      {
+        "post_images_path" : "/assets/memory_manager/",
+        "post_header_image_path" : "/assets/memory_manager/title.png",
+        "post_title" : "Memory Management in C++ with Custom Allocators",
+        "post_description" : "The dissertation for my degree explored memory allocation patterns for game engines.",
+        "post_date" : "2015-05-15",
+        "post_body" : ["This project was completed as the dissertation for my degree at Stafforshire University. Its purpose was to investigate heap allocation techniques and ways in which heap allocation times can be improved.",
+                       "The link below is of the Bitbucket repository for the project. Inside the readme there is also a link to the paper that I wrote to accompany the project. This contains all the information about my research, initial designs, implementation and how the project was tested."],
+        "post_images_files" : ["title.png", "hundredkilbytegraph.png"],
+        "post_link_icon" : "title.png",
+        "post_link" : "https://bitbucket.org/luckielordie/fyp-heap-manager/overview"
+      },
+
+      {
+        "post_images_path" : "/assets/game_engine/",
+        "post_header_image_path" : "/assets/game_engine/title.png",
+        "post_title" : "C# Game Engine with SharpDX",
+        "post_description" : "A group project to create a game with our own game engine.",
+        "post_date" : "2014-12-15",
+        "post_body" : ["talk about group project",
+                       "designing component based system",
+                       "input manager",
+                       "console and plugin system",
+                       "Since the module this project is for is still taught at the university, I have been advised to keep the repository private. However if you contact me I will gladly give your bitbucket account priviledges."],
+        "post_images_files" : ["title.png"],
+        "post_link_icon" : "title.png",
+        "post_link" : "https://bitbucket.org/luckielordie/awgp14-the-team-formerly-known-as-prince"
       }
   ]
 }
