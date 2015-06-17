@@ -34,6 +34,12 @@ function FillPage()
     //load cookie
     $.cookie.json = true;
     var project = $.cookie('projectToShow');
+    var projectBody = $.cookie('projectToShowBody');
+    $.removeCookie('projectToShow');
+    $.removeCookie('projectToShowBody');
+
+    project['post_body'] = projectBody;
+
     FillCarousel(project['post_images_files'], project['post_images_path']);
 
     $('#projectTitle').append(project['post_title']);
