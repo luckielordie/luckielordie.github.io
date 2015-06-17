@@ -35,8 +35,6 @@ function FillPage()
     $.cookie.json = true;
     var project = $.cookie('projectToShow');
     var projectBody = $.cookie('projectToShowBody');
-    $.removeCookie('projectToShow');
-    $.removeCookie('projectToShowBody');
 
     project['post_body'] = projectBody;
 
