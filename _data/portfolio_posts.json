@@ -7,8 +7,13 @@
         "post_title" : "Missile Mania",
         "post_description" : "A HTML 5 game written during my time at Mobile Pie.",
         "post_date" : "2014-02-30",
-        "post_body" : ["Missile Mania is a 2D Action game where the player must launch their missile and fly as far as possible and collect coins. The coins can then be used to upgrade your missile to fly faster and farther. The game features achievements and persistence in between playthroughs." ,"Missile Mania was a project I was able to undertake when working at Mobile Pie on my placement year as part of my degree. It was written in Javascript and used the open source game engine 'Phaser'
-          to help with rendering across multiple mobile platforms and to help with input from touchscreen devices. Phaser's physics engine was not fully featured at the time of writing so 'ChipmunkJS' was used in order to process the rockets physics components. You can play Missile Mania at the link below."],
+        "post_body" : ["Missile Mania is a 2D Action game where the player must launch their missile and fly as far as possible and collect coins. The coins can
+          then be used to upgrade your missile to fly faster and farther. The game features achievements and persistence in between playthroughs." ,
+
+          "Missile Mania was a project I was able to undertake when working at Mobile Pie on my placement year as part of my degree. It was written in Javascript
+          and used the open source game engine 'Phaser' to help with rendering across multiple mobile platforms and to help with input from touchscreen devices.
+          Phaser's physics engine was not fully featured at the time of writing so 'ChipmunkJS' was used in order to process the rockets physics components.
+           You can play Missile Mania at the link below."],
         "post_images_files" : ["title.png", "loadout.png", "gameplay.png", "summary.png"],
         "post_link_icon" : "title.png",
         "post_link" : "http://www.mobilepie.com/games/missile-mania/"
@@ -20,9 +25,22 @@
         "post_title" : "Memory Management in C++ with Custom Allocators",
         "post_description" : "The dissertation for my degree explored memory allocation patterns for game engines.",
         "post_date" : "2015-05-15",
-        "post_body" : ["This project was completed as the dissertation for my degree at Stafforshire University. Its purpose was to investigate heap allocation techniques and ways in which heap allocation times can be improved.",
-                       "The link below is of the Bitbucket repository for the project. Inside the readme there is also a link to the paper that I wrote to accompany the project. This contains all the information about my research, initial designs, implementation and how the project was tested."],
-        "post_images_files" : ["title.png", "hundredkilbytegraph.png"],
+        "post_body" : ["This project was completed as the dissertation for my degree at Stafforshire University. Its purpose was to investigate heap allocation techniques
+          and ways in which heap allocation times can be improved. The project delivered an interface for creating custom memory allocators that will work with the tools
+          for logging memory allocations, helping to identify memory leaks. It does this by taking the difference between two snapshots and presenting that to the user, they are
+          then able to determine memory leaks easier because the information is presented to them clearly. The tool also displays information about avery allocation made by the application
+          such as the size, alignment, line number and function the allocation was made on/in and the tag that was given to the allocation. Tags are sorted when the tool loads the snapshot file
+          and is able to show information about how much memory a certain tag is taking.",
+
+          "The main focus of the application was heap allocation however. It was found that pre-allocating the memory needed by an application can speed up memory requests since
+          the application no longer has to pause while waiting for the OS to return a memory address that can be used for the application. Pre-allocating was found to be quick when coupled with
+          allocation patterns such as the Linear Allocator and the Pool Allocator, these allocation patterns were designed to suit very specific scenarios and were chosen because of their relevance to
+          games programming. However pre-allocating has downsides since allocators generally don't have the option to grow or shrink, this leads to allocating to the 'worst case' when memory usage can be
+          quite high in a particular part of the runtime. Patterns such as a 'Free List' were investigated as a way to provide variable sized allocators.",
+
+          "I have only described in small detail the content of the project, if the topic interests you the Bitbucket repository for the project can be found in the link below. Inside the readme there is
+          also a link to the paper that I wrote to accompany the project. This contains all the information about my research, initial designs, implementation and how the project was tested."],
+        "post_images_files" : ["title.png", "hundredkilbytegraph.png", "code.png"],
         "post_link_icon" : "title.png",
         "post_link" : "https://bitbucket.org/luckielordie/fyp-heap-manager/overview"
       },
@@ -33,12 +51,30 @@
         "post_title" : "C# Game Engine with SharpDX",
         "post_description" : "A group project to create a game with our own game engine.",
         "post_date" : "2014-12-15",
-        "post_body" : ["talk about group project",
-                       "designing component based system",
-                       "input manager",
-                       "console and plugin system",
-                       "Since the module this project is for is still taught at the university, I have been advised to keep the repository private. However if you contact me I will gladly give your bitbucket account priviledges."],
-        "post_images_files" : ["title.png"],
+        "post_body" : ["This was a project in which we were split into groups of three people, given a repository and a specification. The aim of the project was to create a game engine that could be used to create
+          a small game. The engine as a minimum must be able to render 2D or 3D environments, take user input and simulate basic physics. These requirements were split up between the members of our team and
+          I was given the task of creating an input system that can take user input and present it in game logic in a meaningful way to a developer.",
+
+          "The first task to overcome was to decide on how entities in the game world will be created, we decided on the Component-Entity model where game entities are represented as a set of components that give the entity behaviour. For
+          example, an entity is given a 'Particle Physics' component, now it is able to be moved in the game world by the physics system. In our engine we paired components with a system that controlled all components in the game world of that type.
+          When a component is added to an entity a message is sent to the appropiate system and the system creates the component, adds it to it's list of alive components and the reference returned to the entity. This concept allowed for
+          the logic for a component to be seperated from the data the component has. For example the physics component we talked about before will only contain information about that specific components velocity and acceleration, every update loop
+          the system for that component uses the logic for moving a particle under acceleration and the values contained in the component it's operating on.",
+
+           "For the input module I was responsible for I set myself the following goals. New devices must be able to be added to the system by extending the code, no other changes should be nesecery to do this.
+           The system must be general enough to allow for remapping of input by editing a data file, in other words input mapping. The idea is to seperate the logic of an action from the input required to make that action happen.
+           For example, 'when the player presses 'A' the sprite will jump', The action jump in the example is tied to the button 'A'. Instead I opted for 'If the action for 'Jump' occurs then the sprite will jump' In this example from the
+           developers perspective the button required to make the jump action is irrelevent to the logic need to make the sprite jump. The input system can be configured by an XML file to map the actions (like 'jump') to hardware buttons,
+           then it is the job of the input system to fire off the actions when they occur, once the action is fired the game code can respond to the action however they like. Another massive benefit to the system is that the controls for a
+           game can be reconfigured during runtime to a players preference.",
+
+           "While developing the project I also took on a number of smaller modules that interested me. The first was a console logging class that was able to provide information from the console in a more friendly way. This involved creating 'channels'
+           that the developer could output to, then filter the output of the console to only show output from a certain channel. It also logged all output to text files so that in case of a crash the last logs could be recovered. The second mini project was
+           creating a way for developers to create plugins for the game engine itself. By creating a plugin manager and exposing interfaces for the update and draw loop developers could create their own components and systems for the engine.",
+
+           "This project was by far the favourite one I undertook during my time at Staffordshire, it gave me the freedom to explore an area of games development I am extremely interested in. Since the module this project is for is still taught
+           at the university, I have been advised to keep the repository private. However if you contact me I will gladly give your bitbucket account priviledges."],
+        "post_images_files" : ["title.png", "input.png"],
         "post_link_icon" : "title.png",
         "post_link" : "https://bitbucket.org/luckielordie/awgp14-the-team-formerly-known-as-prince"
       }
