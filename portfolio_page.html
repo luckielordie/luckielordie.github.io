@@ -33,10 +33,13 @@ function FillPage()
   {
     //load cookie
     $.cookie.json = true;
-    var project = $.cookie('projectToShow');
-    var projectBody = $.cookie('projectToShowBody');
+    var projectName = $.cookie('project');
+    var project = {};
 
-    project['post_body'] = projectBody;
+    {% for projectEntry in site.data.portfolio_posts.posts %}
+    var projectThing = {{projectEntry | jsonify}}
+    if(projectThing["post_title"] == projectName["id"]) project = projectThing;
+    {%endfor%}
 
     FillCarousel(project['post_images_files'], project['post_images_path']);
 
@@ -51,6 +54,8 @@ function FillPage()
     $('#icon').prop('src', project['post_images_path'] + project['post_link_icon']);
     $('#projectLink').prop('href', project['post_link']);
 
+    $.removeCookie('projectToShow');
+    $.removeCookie('projectToShowBody');
   });
 }
 

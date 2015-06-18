@@ -21,12 +21,8 @@ layout : default
             function()
             {
               var project = {{project | jsonify}};
-              var projectBody = project["post_body"];
-              delete project["post_body"];
               $.cookie.json = true;
-
-              $.cookie('projectToShow', project, {expires: 2});
-              var test = $.cookie('projectToShowBody', projectBody, {expires: 2});
+              $.cookie('project', { "id" : project["post_title"] }, {expires: 2});
             }
         });
         </script>
