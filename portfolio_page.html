@@ -42,6 +42,12 @@ function FillPage()
     {%endfor%}
 
     FillCarousel(project['post_images_files'], project['post_images_path']);
+	
+	if( false == project['post_images_files'] )
+	{
+		$('#indicatorsElement').remove();
+		$('#carouselInner').remove();
+	}
 
     $('#projectTitle').append(project['post_title']);
     $('#projectDate').append(project['post_date'] + " - " + project['post_description']);
@@ -54,6 +60,12 @@ function FillPage()
     $('#icon').prop('src', project['post_images_path'] + project['post_link_icon']);
     $('#projectLink').prop('href', project['post_link']);
 
+	if( false == project['post_link'] )
+	{
+		$('#projectLink').remove();
+	}
+	
+	
     $.removeCookie('projectToShow');
     $.removeCookie('projectToShowBody');
   });

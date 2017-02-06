@@ -7,10 +7,18 @@
         "post_title" : "Hooking Win32API calls with Minhook",
         "post_description" : "Another exploration into Memory Management",
         "post_date" : "2016-3-2",
-        "post_body" : [""],
+        "post_body" : ["During my time at Inspired I was tasked with creating a tool that could profile the memory usage of our games. Part of the requirements are that
+			memory allocations could be traced back to individual modules within our codebase. When I was researching methods of doing this that could be implemented into existing games
+			I came across a library called Minhook. Minhook allows the user to register callbacks whenever a loaded module calls a specific Win32 API function call.",
+			"In order to log every allocation I hooked the 'HeapAlloc' and 'HeapFree' calls in Win32 API and use the DbgHelp library that Microsoft provides with Windows to load symbols for 
+			the code and generate a stack trace. This then allowed me to walk up the stack until I find the module that made the allocation.",
+			"This was not a particularly efficient method to use, however the tool was able to generate a lot of useful data about memory allocations for every single loaded module in any one of our 
+			games. The scope of this project was limited to only capturing heap data, however it could also be modified to also capture stack data in the same manor. Another application of this code
+			could also be the use of custom allocation methods by routing memory allocations into pre-allocated space previously requested by the program. This would be along the same lines as my University 
+			dissertation on heap memory allocation techniques."],
         "post_images_files" : [""],
         "post_link_icon" : "",
-        "post_link" : ""
+        "post_link" : "https://github.com/TsudaKageyu/minhook"
     },
 	{
         "post_images_path" : "",
@@ -18,28 +26,16 @@
         "post_title" : "Embedded C++ Web Server",
         "post_description" : "CivetWeb and creating a REST API",
         "post_date" : "2015-11-23",
-        "post_body" : [""],
+        "post_body" : ["The first project I worked on at Inspired was a tool to help game devleopers make games on the Inspired platform without the need of a live environment. 
+			The code that interacted with the games was mostly already in place, however what existed was configured via an xml file before the code was run and was not able to be interacted with during runtime.
+			The requirement was to add the ability for developers to add credit to the platform while the games were running and other simulations of 'live' behaviour.",
+			"In order to expose the behaviour I embedded a web server into the code that the game developers consume and allowed access to functions such as adding credit by way of a REST API provided by the web server.
+			This allows a web page provided by the web server to access this API. With the UI being a web page it was also possible to make the page viewable on mobile devices and desktop devices in the web browser. The added 
+			benefit of exposing the functionality this way is that devlopers can consume the functionality via the web page provided or by making cUrl requests through their own code to automate their testing procedures."],
         "post_images_files" : [""],
         "post_link_icon" : "",
         "post_link" : ""
     },
-	{
-		"post_images_path" : "/assets/missile_mania/",
-		"post_header_image_path" : "/assets/missile_mania/title.png",
-		"post_title" : "Missile Mania",
-		"post_description" : "A HTML 5 game written during my time at Mobile Pie.",
-		"post_date" : "2014-02-30",
-		"post_body" : ["Missile Mania is a 2D Action game where the player must launch their missile and fly as far as possible and collect coins. The coins can
-		  then be used to upgrade your missile to fly faster and farther. The game features achievements and persistence in between playthroughs." ,
-
-		  "Missile Mania was a project I was able to undertake when working at Mobile Pie on my placement year as part of my degree. It was written in Javascript
-		  and used the open source game engine 'Phaser' to help with rendering across multiple mobile platforms and to help with input from touchscreen devices.
-		  Phaser's physics engine was not fully featured at the time of writing so 'ChipmunkJS' was used in order to process the rockets physics components.
-		   You can play Missile Mania at the link below."],
-		"post_images_files" : ["title.png", "loadout.png", "gameplay.png", "summary.png"],
-		"post_link_icon" : "title.png",
-		"post_link" : "http://www.mobilepie.com/games/missile-mania/"
-	},
 	{
 		"post_images_path" : "/assets/memory_manager/",
 		"post_header_image_path" : "/assets/memory_manager/title.png",
@@ -62,7 +58,24 @@
 		  also a link to the paper that I wrote to accompany the project. This contains all the information about my research, initial designs, implementation and how the project was tested."],
 		"post_images_files" : ["title.png", "hundredkilbytegraph.png", "code.png"],
 		"post_link_icon" : "title.png",
-		"post_link" : "https://bitbucket.org/luckielordie/fyp-heap-manager/overview"
+		"post_link" : ""
+	},
+	{
+		"post_images_path" : "/assets/missile_mania/",
+		"post_header_image_path" : "/assets/missile_mania/title.png",
+		"post_title" : "Missile Mania",
+		"post_description" : "A HTML 5 game written during my time at Mobile Pie.",
+		"post_date" : "2014-02-30",
+		"post_body" : ["Missile Mania is a 2D Action game where the player must launch their missile and fly as far as possible and collect coins. The coins can
+		  then be used to upgrade your missile to fly faster and farther. The game features achievements and persistence in between playthroughs." ,
+
+		  "Missile Mania was a project I was able to undertake when working at Mobile Pie on my placement year as part of my degree. It was written in Javascript
+		  and used the open source game engine 'Phaser' to help with rendering across multiple mobile platforms and to help with input from touchscreen devices.
+		  Phaser's physics engine was not fully featured at the time of writing so 'ChipmunkJS' was used in order to process the rockets physics components.
+		   You can play Missile Mania at the link below."],
+		"post_images_files" : ["title.png", "loadout.png", "gameplay.png", "summary.png"],
+		"post_link_icon" : "title.png",
+		"post_link" : "http://www.mobilepie.com/games/missile-mania/"
 	},
 	{
 		"post_images_path" : "/assets/game_engine/",

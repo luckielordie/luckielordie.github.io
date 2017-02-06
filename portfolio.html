@@ -13,7 +13,7 @@ layout : default
         <div class="col-md-5" style="display: table-cell;
     vertical-align: middle;
     float: none;">
-          <img class="featurette-image img-rounded  img-responsive center-block" src="{{project.post_header_image_path}}" style="margin-top: 25px; margin-bottom: auto;">
+          <img id="projectImage" class="featurette-image img-rounded  img-responsive center-block" src="{{project.post_header_image_path}}" style="margin-top: 25px; margin-bottom: auto;">
         </div>
         <script type="text/javascript">
         $(function(){
@@ -21,6 +21,12 @@ layout : default
             function()
             {
               var project = {{project | jsonify}};
+			  
+			  if( false == project[ "post_header_image_path" ] )
+			  {
+				$('#projectImage').remove();
+			  }
+			  
               $.cookie.json = true;
               $.cookie('project', { "id" : project["post_title"] }, {expires: 2});
             }
