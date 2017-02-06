@@ -26,7 +26,7 @@
         "post_title" : "Embedded C++ Web Server",
         "post_description" : "CivetWeb and creating a REST API",
         "post_date" : "2015-11-23",
-        "post_body" : ["The first project I worked on at Inspired was a tool to help game devleopers make games on the Inspired platform without the need of a live environment. 
+        "post_body" : ["The first project I worked on at Inspired was a tool to help game developers make games on the Inspired platform without the need of a live environment. 
 			The code that interacted with the games was mostly already in place, however what existed was configured via an xml file before the code was run and was not able to be interacted with during runtime.
 			The requirement was to add the ability for developers to add credit to the platform while the games were running and other simulations of 'live' behaviour.",
 			"In order to expose the behaviour I embedded a web server into the code that the game developers consume and allowed access to functions such as adding credit by way of a REST API provided by the web server.
